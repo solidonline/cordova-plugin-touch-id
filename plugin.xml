@@ -45,8 +45,8 @@
     <framework src="LocalAuthentication.framework" />
     <framework src="Security.framework" />
 
-    <header-file src="src/ios/TouchID.h"/>
-    <source-file src="src/ios/TouchID.m"/>
+    <header-file src="src/ios/TouchIDEddy.h"/>
+    <source-file src="src/ios/TouchIDEddy.m"/>
   </platform>
 
 </plugin>

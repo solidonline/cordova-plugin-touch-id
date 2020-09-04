@@ -2,27 +2,27 @@ function TouchID() {
 }
 
 TouchID.prototype.isAvailable = function (successCallback, errorCallback) {
-  cordova.exec(successCallback, errorCallback, "TouchID", "isAvailable", []);
+  cordova.exec(successCallback, errorCallback, "TouchIDEddy", "isAvailable", []);
 };
 
 TouchID.prototype.didFingerprintDatabaseChange = function (successCallback, errorCallback) {
-  cordova.exec(successCallback, errorCallback, "TouchID", "didFingerprintDatabaseChange", []);
+  cordova.exec(successCallback, errorCallback, "TouchIDEddy", "didFingerprintDatabaseChange", []);
 };
 
 TouchID.prototype.verifyFingerprint = function (message, successCallback, errorCallback) {
-  cordova.exec(successCallback, errorCallback, "TouchID", "verifyFingerprint", [message]);
+  cordova.exec(successCallback, errorCallback, "TouchIDEddy", "verifyFingerprint", [message]);
 };
 
 TouchID.prototype.verifyFingerprintWithCustomPasswordFallback = function (message, successCallback, errorCallback) {
-  cordova.exec(successCallback, errorCallback, "TouchID", "verifyFingerprintWithCustomPasswordFallback", [message]);
+  cordova.exec(successCallback, errorCallback, "TouchIDEddy", "verifyFingerprintWithCustomPasswordFallback", [message]);
 };
 
 TouchID.prototype.verifyFingerprintWithCustomPasswordFallbackAndEnterPasswordLabel = function (message, enterPasswordLabel, successCallback, errorCallback) {
-  cordova.exec(successCallback, errorCallback, "TouchID", "verifyFingerprintWithCustomPasswordFallbackAndEnterPasswordLabel", [message, enterPasswordLabel]);
+  cordova.exec(successCallback, errorCallback, "TouchIDEddy", "verifyFingerprintWithCustomPasswordFallbackAndEnterPasswordLabel", [message, enterPasswordLabel]);
 };
 
 TouchID.prototype.askPassword = function (message, successCallback, errorCallback) {
-  cordova.exec(successCallback, errorCallback, "TouchID", "askPassword", [message]);
+  cordova.exec(successCallback, errorCallback, "TouchIDEddy", "askPassword", [message]);
 };
 
 TouchID.install = function () {
