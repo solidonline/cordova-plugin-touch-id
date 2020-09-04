@@ -1,37 +1,37 @@
-function TouchID() {
+function TouchIDEddy() {
 }
 
-TouchID.prototype.isAvailable = function (successCallback, errorCallback) {
+TouchIDEddy.prototype.isAvailable = function (successCallback, errorCallback) {
   cordova.exec(successCallback, errorCallback, "TouchIDEddy", "isAvailable", []);
 };
 
-TouchID.prototype.didFingerprintDatabaseChange = function (successCallback, errorCallback) {
+TouchIDEddy.prototype.didFingerprintDatabaseChange = function (successCallback, errorCallback) {
   cordova.exec(successCallback, errorCallback, "TouchIDEddy", "didFingerprintDatabaseChange", []);
 };
 
-TouchID.prototype.verifyFingerprint = function (message, successCallback, errorCallback) {
+TouchIDEddy.prototype.verifyFingerprint = function (message, successCallback, errorCallback) {
   cordova.exec(successCallback, errorCallback, "TouchIDEddy", "verifyFingerprint", [message]);
 };
 
-TouchID.prototype.verifyFingerprintWithCustomPasswordFallback = function (message, successCallback, errorCallback) {
+TouchIDEddy.prototype.verifyFingerprintWithCustomPasswordFallback = function (message, successCallback, errorCallback) {
   cordova.exec(successCallback, errorCallback, "TouchIDEddy", "verifyFingerprintWithCustomPasswordFallback", [message]);
 };
 
-TouchID.prototype.verifyFingerprintWithCustomPasswordFallbackAndEnterPasswordLabel = function (message, enterPasswordLabel, successCallback, errorCallback) {
+TouchIDEddy.prototype.verifyFingerprintWithCustomPasswordFallbackAndEnterPasswordLabel = function (message, enterPasswordLabel, successCallback, errorCallback) {
   cordova.exec(successCallback, errorCallback, "TouchIDEddy", "verifyFingerprintWithCustomPasswordFallbackAndEnterPasswordLabel", [message, enterPasswordLabel]);
 };
 
-TouchID.prototype.askPassword = function (message, successCallback, errorCallback) {
+TouchIDEddy.prototype.askPassword = function (message, successCallback, errorCallback) {
   cordova.exec(successCallback, errorCallback, "TouchIDEddy", "askPassword", [message]);
 };
 
-TouchID.install = function () {
+TouchIDEddy.install = function () {
   if (!window.plugins) {
     window.plugins = {};
   }
 
-  window.plugins.touchidEddy = new TouchID();
+  window.plugins.touchidEddy = new TouchIDEddy();
   return window.plugins.touchidEddy;
 };
 
-cordova.addConstructor(TouchID.install);
+cordova.addConstructor(TouchIDEddy.install);
