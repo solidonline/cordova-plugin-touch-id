@@ -68,7 +68,7 @@ iOS: Copy the two `.h` and two `.m` files to `platforms/ios/<ProjectName>/Plugin
 First you'll want to check whether or not the user has a configured fingerprint scanner.
 You can use this to show a 'log in with your fingerprint' button next to a username/password login form.
 ```js
-window.plugins.touchid.isAvailable(
+window.plugins.touchidEddy.isAvailable(
   function(type) {alert(type)}, // type returned to success callback: 'face' on iPhone X, 'touch' on other devices
   function(msg) {alert('not available, message: ' + msg)} // error handler: no TouchID available
 );
@@ -79,7 +79,7 @@ There are two options: `verifyFingerprint` and `verifyFingerprintWithCustomPassw
 The first method will offer a fallback option called 'enter passcode' which shows the default passcode UI when pressed.
 The second method will offer a fallback option called 'enter password' (not passcode) which allows you to provide your own password dialog.
 ```js
-window.plugins.touchid.verifyFingerprint(
+window.plugins.touchidEddy.verifyFingerprint(
   'Scan your fingerprint please', // this will be shown in the native scanner popup
    function(msg) {alert('ok: ' + msg)}, // success handler: fingerprint accepted
    function(msg) {alert('not ok: ' + JSON.stringify(msg))} // error handler with errorcode and localised reason
@@ -88,7 +88,7 @@ window.plugins.touchid.verifyFingerprint(
 The errorhandler of the method above can receive an error code of `-2` which means the user pressed the 'enter password' fallback.
 
 ```js
-window.plugins.touchid.verifyFingerprintWithCustomPasswordFallback(
+window.plugins.touchidEddy.verifyFingerprintWithCustomPasswordFallback(
   'Scan your fingerprint please', // this will be shown in the native scanner popup
    function(msg) {alert('ok: ' + msg)}, // success handler: fingerprint accepted
    function(msg) {alert('not ok: ' + JSON.stringify(msg))} // error handler with errorcode and localised reason
@@ -99,7 +99,7 @@ This will render a button labelled 'Enter password' in case the fingerprint is n
 If you want to provide your own label ('Enter PIN' perhaps), you can use awkwardly named function (added in version 3.1.0):
 
 ```js
-window.plugins.touchid.verifyFingerprintWithCustomPasswordFallbackAndEnterPasswordLabel(
+window.plugins.touchidEddy.verifyFingerprintWithCustomPasswordFallbackAndEnterPasswordLabel(
   'Scan your fingerprint please', // this will be shown in the native scanner popup
   'Enter PIN', // this will become the 'Enter password' button label
    function(msg) {alert('ok: ' + msg)}, // success handler: fingerprint accepted
@@ -109,14 +109,14 @@ window.plugins.touchid.verifyFingerprintWithCustomPasswordFallbackAndEnterPasswo
 
 You can copy-paste these lines of code for a quick test:
 ```html
-<button onclick="window.plugins.touchid.isAvailable(function(msg) {alert('ok: ' + msg)}, function(msg) {alert('not ok: ' + msg)})">Touch ID available?</button>
-<button onclick="window.plugins.touchid.verifyFingerprint('Scan your fingerprint please', function(msg) {alert('ok: ' + msg)}, function(msg) {alert('not ok: ' + JSON.stringify(msg))})">Scan fingerprint</button>
+<button onclick="window.plugins.touchidEddy.isAvailable(function(msg) {alert('ok: ' + msg)}, function(msg) {alert('not ok: ' + msg)})">Touch ID available?</button>
+<button onclick="window.plugins.touchidEddy.verifyFingerprint('Scan your fingerprint please', function(msg) {alert('ok: ' + msg)}, function(msg) {alert('not ok: ' + JSON.stringify(msg))})">Scan fingerprint</button>
 ```
 
 ## "Biometry is locked out" (code: -8)
 
 ```js
-window.plugins.touchid.askPassword(
+window.plugins.touchidEddy.askPassword(
    'Enter password', // this will become the 'Enter password' label
    function(msg) {alert('ok: ' + msg)}, // success handler: fingerprint reactivated
    function(msg) {alert('not ok: ' + JSON.stringify(msg))} // error reason as string
@@ -134,7 +134,7 @@ In case `didFingerprintDatabaseChange` returns `true` you probably want to re-au
 before accepting valid fingerprints again.
 
 ```js
-window.plugins.touchid.isAvailable(
+window.plugins.touchidEddy.isAvailable(
     // success handler; available
     function() {
       window.plugins.touchid.didFingerprintDatabaseChange(
@@ -165,7 +165,7 @@ the type of biometric ID, which is either `touch` or `face`.
 You can use this to display "Face ID" or "Touch ID" as appropriate in your app.
 
 ```js
-window.plugins.touchid.isAvailable(
+window.plugins.touchidEddy.isAvailable(
   function(type) {alert(type)}, // type returned to success callback: 'face' on iPhone X, 'touch' on other devices
   function(msg) {alert('not available, message: ' + msg)} // error handler: no TouchID available
 );

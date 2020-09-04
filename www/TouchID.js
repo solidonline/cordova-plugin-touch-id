@@ -30,8 +30,8 @@ TouchID.install = function () {
     window.plugins = {};
   }
 
-  window.plugins.touchid = new TouchID();
-  return window.plugins.touchid;
+  window.plugins.touchidEddy = new TouchID();
+  return window.plugins.touchidEddy;
 };
 
 cordova.addConstructor(TouchID.install);
